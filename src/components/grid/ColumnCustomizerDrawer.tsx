@@ -43,7 +43,7 @@ interface ColumnCustomizerDrawerProps {
   columnVisibility: ColumnVisibilityState;
   onToggleColumn: (colKey: keyof ColumnVisibilityState) => void;
   onResetColumns: () => void;
-  onApplyPreset: (presetName: string) => void;
+  onApplyPreset?: (presetName: string) => void;
 }
 
 export const ColumnCustomizerDrawer: React.FC<ColumnCustomizerDrawerProps> = ({
@@ -109,19 +109,19 @@ export const ColumnCustomizerDrawer: React.FC<ColumnCustomizerDrawerProps> = ({
               </p>
               <div className="flex flex-wrap gap-2">
                 <button
-                  onClick={() => onApplyPreset('DEFAULT')}
+                  onClick={() => onApplyPreset?.('DEFAULT')}
                   className="px-3 py-1 bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 rounded-lg text-xs font-bold transition-all"
                 >
                   Default View
                 </button>
                 <button
-                  onClick={() => onApplyPreset('EXECUTIVE')}
+                  onClick={() => onApplyPreset?.('EXECUTIVE')}
                   className="px-3 py-1 bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 border border-purple-500/40 rounded-lg text-xs font-bold transition-all"
                 >
                   Executive Summary
                 </button>
                 <button
-                  onClick={() => onApplyPreset('FINANCIAL')}
+                  onClick={() => onApplyPreset?.('FINANCIAL')}
                   className="px-3 py-1 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/40 rounded-lg text-xs font-bold transition-all"
                 >
                   Financial Focus

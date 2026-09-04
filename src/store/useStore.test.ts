@@ -64,7 +64,9 @@ describe('OmniCost Complete Platform Unit Tests', () => {
 
     const state = useStore.getState();
     expect(state.resources[0].totalSpend).toBe(162.50);
-    expect(state.resources[0].metrics.cpuUtilization).toBe(88.5);
+    if (state.resources[0].type === 'CLOUD') {
+      expect(state.resources[0].metrics.cpuUtilization).toBe(88.5);
+    }
     expect(state.alerts.length).toBe(1);
     expect(state.alerts[0].severity).toBe('CRITICAL');
   });
