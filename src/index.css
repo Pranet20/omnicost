@@ -1,0 +1,87 @@
+/* src/index.css - OmniCost Themes & Accessibility Styling */
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-200 antialiased overflow-hidden;
+    background-color: #0B0F19;
+    color: #E2E8F0;
+  }
+
+  button, 
+  a, 
+  select, 
+  input[type="button"], 
+  input[type="submit"], 
+  input[type="reset"],
+  input[type="checkbox"], 
+  input[type="radio"], 
+  input[type="range"], 
+  [role="button"], 
+  [tabindex="0"],
+  label {
+    cursor: pointer !important;
+  }
+}
+
+/* --- AG Grid Enterprise Overrides --- */
+.ag-theme-alpine-dark {
+  --ag-background-color: transparent !important;
+  --ag-header-background-color: #0F172A !important;
+  --ag-odd-row-background-color: rgba(30, 41, 59, 0.3) !important;
+  --ag-border-color: #1E293B !important;
+  --ag-row-border-color: #1E293B !important;
+  --ag-header-foreground-color: #94A3B8 !important;
+  --ag-data-color: #E2E8F0 !important;
+  --ag-row-hover-color: rgba(99, 102, 241, 0.1) !important;
+  --ag-font-family: inherit !important;
+  --ag-font-size: 13px !important;
+}
+
+.ag-theme-alpine-dark .ag-header-cell {
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.ag-theme-alpine-dark .ag-cell-focus {
+  border: none !important;
+  outline: none !important;
+}
+
+/* --- LIGHT THEME OVERRIDES --- */
+body[data-theme="LIGHT"] {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+body[data-theme="LIGHT"] .bg-slate-950,
+body[data-theme="LIGHT"] .bg-slate-900 {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #E2E8F0 !important;
+}
+body[data-theme="LIGHT"] .text-white {
+  color: #0F172A !important;
+}
+body[data-theme="LIGHT"] .text-slate-400,
+body[data-theme="LIGHT"] .text-slate-300 {
+  color: #475569 !important;
+}
+body[data-theme="LIGHT"] .border-slate-800,
+body[data-theme="LIGHT"] .border-slate-700 {
+  border-color: #E2E8F0 !important;
+}
+
+/* --- COLORBLIND HIGH-CONTRAST ACCESSIBILITY OVERRIDES --- */
+body[data-theme="COLORBLIND"] {
+  --color-success: #0072B2; /* Okabe-Ito High Contrast Blue */
+  --color-danger: #D55E00;  /* Vermilion Red/Orange */
+  --color-warning: #F0E442; /* Yellow */
+}
+body[data-theme="COLORBLIND"] .text-emerald-400 { color: #0072B2 !important; }
+body[data-theme="COLORBLIND"] .bg-emerald-500\/10 { background-color: rgba(0, 114, 178, 0.2) !important; }
+body[data-theme="COLORBLIND"] .border-emerald-500\/30 { border-color: rgba(0, 114, 178, 0.5) !important; }
+body[data-theme="COLORBLIND"] .text-red-400 { color: #D55E00 !important; }
+body[data-theme="COLORBLIND"] .bg-red-500\/10 { background-color: rgba(213, 94, 0, 0.2) !important; }
+body[data-theme="COLORBLIND"] .border-red-500\/30 { border-color: rgba(213, 94, 0, 0.5) !important; }
