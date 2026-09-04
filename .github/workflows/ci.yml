@@ -27,8 +27,11 @@ jobs:
     - name: TypeScript Type Check
       run: npx tsc --noEmit
 
+    - name: Install Playwright Browsers
+      run: npx playwright install chromium --with-deps
+
     - name: Run Unit Tests (Vitest)
-      run: npx vitest run src
+      run: npx vitest run --project=unit
 
     - name: Build Production Assets
       run: npm run build

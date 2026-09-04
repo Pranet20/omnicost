@@ -16,8 +16,10 @@ export default defineConfig({
     projects: [{
       extends: true,
       test: {
+        name: 'unit',
         environment: 'jsdom',
-        globals: true
+        globals: true,
+        include: ['src/**/*.test.ts', 'src/**/*.test.tsx']
       }
     }, {
       extends: true,
